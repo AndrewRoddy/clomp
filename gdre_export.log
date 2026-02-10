@@ -1,24 +1,24 @@
 GDRE Tools v2.4.0
 Windows 10.0.26200, Intel(R) Iris(R) Xe Graphics, vulkan
-Opening file: C:/Users/Andre/Downloads/Clomp/Clomp/index.pck
+Opening file: C:/Users/Andre/Downloads/Clomp2/Clomp.2h/Clomp.2h.pck
 Multiple passing candidates for bytecode version 13:
 3.5.0-stable (a7aad78), 3.2.0-stable (5565f55)
 Choosing only one that matches engine version: 3.2.0-stable (5565f55).
-Loaded 28 imported files
+Loaded 76 imported files
 Detected Engine Version: 3.4.4
 Detected Bytecode Revision: 3.2.0-stable (5565f55)
-Verified 66 files, no errors detected!
-Extracted 66 files, no errors detected!
+Verified 166 files, no errors detected!
+Extracted 166 files, no errors detected!
 Saved project config.
 
 
 ********************************EXPORT REPORT********************************
 
 Totals:                                 
-Decompiled scripts:                     5
+Decompiled scripts:                     11
 Failed scripts:                         0
-Imported resources for export session:  28
-Successfully converted:                 28
+Imported resources for export session:  76
+Successfully converted:                 76
 Lossy:                                  0
 Rewrote metadata:                       0
 Non-importable conversions:             0

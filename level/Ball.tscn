@@ -1,23 +1,111 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://assets/ballasset.png" type="Texture" id=1]
 [ext_resource path="res://level/Ball.gd" type="Script" id=2]
+[ext_resource path="res://assets/Balls/CyanBall.png" type="Texture" id=3]
 [ext_resource path="res://assets/donk.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/Balls/RedBall.png" type="Texture" id=5]
+[ext_resource path="res://assets/Balls/WhiteBall.png" type="Texture" id=6]
+[ext_resource path="res://assets/Balls/BrownBall.png" type="Texture" id=7]
+[ext_resource path="res://assets/Balls/BlueBall.png" type="Texture" id=8]
+[ext_resource path="res://assets/Balls/GreenBall.png" type="Texture" id=9]
+[ext_resource path="res://assets/Balls/PinkBall.png" type="Texture" id=10]
+[ext_resource path="res://assets/Balls/GrayBall.png" type="Texture" id=11]
+[ext_resource path="res://assets/Balls/OrangeBall.png" type="Texture" id=12]
+[ext_resource path="res://assets/Balls/YellowBall.png" type="Texture" id=13]
+[ext_resource path="res://assets/Balls/PurpleBall.png" type="Texture" id=14]
+[ext_resource path="res://assets/Balls/BlackBall.png" type="Texture" id=15]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 34.0
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.5
 
+[sub_resource type="CircleShape2D" id=3]
+radius = 9.0
+
 [node name="Ball" type="KinematicBody2D" groups=["BallGroup"]]
 script = ExtResource( 2 )
 
-[node name="Ballasset" type="Sprite" parent="."]
-position = Vector2( -4.47035e-08, -4.47035e-08 )
-scale = Vector2( 1.04412, 1.04412 )
-texture = ExtResource( 1 )
+[node name="BlackBall" type="Sprite" parent="."]
+position = Vector2( -9.53674e-07, -9.53674e-07 )
+scale = Vector2( 0.138462, 0.138462 )
+texture = ExtResource( 15 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="BlueBall" type="Sprite" parent="."]
 visible = false
+position = Vector2( 1.90735e-06, 3.8147e-06 )
+scale = Vector2( 0.261538, 0.261538 )
+texture = ExtResource( 8 )
+
+[node name="BrownBall" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.257576, 0.257576 )
+texture = ExtResource( 7 )
+
+[node name="CyanBall" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1.90735e-06, 3.8147e-06 )
+scale = Vector2( 0.261538, 0.261538 )
+texture = ExtResource( 3 )
+
+[node name="GrayBall" type="Sprite" parent="."]
+visible = false
+position = Vector2( 3.8147e-06, 1.90735e-06 )
+scale = Vector2( 0.261538, 0.261538 )
+texture = ExtResource( 11 )
+
+[node name="GreenBall" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1.90735e-06, 3.8147e-06 )
+scale = Vector2( 0.261538, 0.261538 )
+texture = ExtResource( 9 )
+
+[node name="OrangeBall" type="Sprite" parent="."]
+visible = false
+position = Vector2( 3.8147e-06, 1.90735e-06 )
+scale = Vector2( 0.261538, 0.261538 )
+texture = ExtResource( 12 )
+
+[node name="PinkBall" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1.90735e-06, 3.8147e-06 )
+scale = Vector2( 0.261538, 0.261538 )
+texture = ExtResource( 10 )
+
+[node name="PurpleBall" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1.90735e-06, 3.8147e-06 )
+scale = Vector2( 0.261538, 0.261538 )
+texture = ExtResource( 14 )
+
+[node name="RedBall" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1.90735e-06, 3.8147e-06 )
+scale = Vector2( 0.261538, 0.261538 )
+texture = ExtResource( 5 )
+
+[node name="WhiteBall" type="Sprite" parent="."]
+visible = false
+position = Vector2( -3.8147e-06, -1.90735e-06 )
+scale = Vector2( 0.261538, 0.261538 )
+texture = ExtResource( 6 )
+
+[node name="YellowBall" type="Sprite" parent="."]
+visible = false
+position = Vector2( -5.06639e-07, -8.13603e-06 )
+scale = Vector2( 0.261538, 0.261538 )
+texture = ExtResource( 13 )
+
+[node name="BigBall" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="MediumBall" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="SmallBall" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 3 )
 
 [node name="Donk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
