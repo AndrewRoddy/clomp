@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/donk.mp3-72dea3bb71e41d810ae97ffdf5668cad.mp3str"
+
+[deps]
+
+source_file="res://assets/donk.mp3"
+dest_files=[ "res://.import/donk.mp3-72dea3bb71e41d810ae97ffdf5668cad.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

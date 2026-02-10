@@ -1,0 +1,313 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://level/Opponent.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level/Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level/Opponent.gd" type="Script" id=4]
+[ext_resource path="res://level/Level.gd" type="Script" id=5]
+[ext_resource path="res://assets/Bubblegum.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://LeftWall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://RightWall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://level/CountdownLabel.gd" type="Script" id=10]
+[ext_resource path="res://assets/Arms.png" type="Texture" id=11]
+[ext_resource path="res://assets/Asset 5.png" type="Texture" id=12]
+[ext_resource path="res://assets/Asset 3.png" type="Texture" id=13]
+[ext_resource path="res://assets/Asset 1.png" type="Texture" id=14]
+[ext_resource path="res://assets/Asset 2.png" type="Texture" id=15]
+[ext_resource path="res://assets/Asset 4.png" type="Texture" id=16]
+[ext_resource path="res://assets/Asset 6.png" type="Texture" id=17]
+[ext_resource path="res://assets/BadArms.png" type="Texture" id=18]
+[ext_resource path="res://assets/TryAgain.png" type="Texture" id=19]
+[ext_resource path="res://assets/Gray Box.png" type="Texture" id=20]
+[ext_resource path="res://assets/HighRes.png" type="Texture" id=21]
+[ext_resource path="res://assets/You Win!.png" type="Texture" id=22]
+[ext_resource path="res://assets/HighResGlowing.png" type="Texture" id=23]
+[ext_resource path="res://assets/White Box.png" type="Texture" id=24]
+[ext_resource path="res://assets/EnterPlay.png" type="Texture" id=25]
+[ext_resource path="res://Cover/Start Screen.png" type="Texture" id=26]
+[ext_resource path="res://assets/clank.mp3" type="AudioStream" id=28]
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=8]
+default_font = SubResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 6 )
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 33.4391
+height = 41.7985
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 33.0463
+height = 135.521
+
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 33.7972
+height = 223.902
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 33.3811
+height = 317.114
+
+[sub_resource type="CapsuleShape2D" id=14]
+radius = 33.2238
+height = 406.99
+
+[sub_resource type="CapsuleShape2D" id=15]
+radius = 33.7284
+height = 502.471
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 52.75, 524.5 )
+
+[node name="Level" type="Node"]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_vertical_guides_": [ 320.0, 960.0 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0784314, 0.129412, 0.14902, 1 )
+
+[node name="Arms" type="Sprite" parent="."]
+position = Vector2( 639.853, 683 )
+scale = Vector2( 0.870668, 0.852941 )
+texture = ExtResource( 11 )
+
+[node name="BadArms" type="Sprite" parent="."]
+position = Vector2( 641, 42 )
+scale = Vector2( 0.867568, 0.920001 )
+texture = ExtResource( 18 )
+
+[node name="PlayerScore" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 200.0
+theme = SubResource( 4 )
+text = "Test"
+align = 1
+valign = 1
+
+[node name="CountdownLabel" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -80.0
+theme = SubResource( 8 )
+custom_colors/font_color = Color( 0.952941, 0.313726, 0.160784, 1 )
+text = "Countdown"
+align = 1
+valign = 1
+script = ExtResource( 10 )
+
+[node name="OpponentScore" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -199.0
+theme = SubResource( 5 )
+text = "Test"
+align = 1
+valign = 1
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 648, 680 )
+
+[node name="Size1" type="Sprite" parent="Player"]
+position = Vector2( -10.0001, 0.00012207 )
+rotation = 1.5708
+scale = Vector2( 0.478483, 0.478483 )
+texture = ExtResource( 14 )
+
+[node name="Size1Collision" type="CollisionShape2D" parent="Player"]
+visible = false
+position = Vector2( -2, 7.62939e-06 )
+rotation = -3.14159
+scale = Vector2( 0.478483, 0.478483 )
+shape = SubResource( 10 )
+disabled = true
+
+[node name="Size2" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( -9.5578, 1.07861 )
+rotation = 1.5708
+scale = Vector2( 0.484752, 0.476505 )
+texture = ExtResource( 15 )
+
+[node name="Size2Collision" type="CollisionShape2D" parent="Player"]
+visible = false
+position = Vector2( -1.99966, 0.982079 )
+scale = Vector2( 0.484752, 0.476505 )
+shape = SubResource( 11 )
+disabled = true
+
+[node name="Size3" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( -10, -1.00012 )
+rotation = 1.5708
+scale = Vector2( 0.47342, 0.47342 )
+texture = ExtResource( 13 )
+
+[node name="Size3Collision" type="CollisionShape2D" parent="Player"]
+visible = false
+position = Vector2( -2, -1 )
+scale = Vector2( 0.47342, 0.47342 )
+shape = SubResource( 12 )
+disabled = true
+
+[node name="Size4" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( -10.0001, 0.999878 )
+rotation = 1.5708
+scale = Vector2( 0.479321, 0.479321 )
+texture = ExtResource( 16 )
+
+[node name="Size4Collision" type="CollisionShape2D" parent="Player"]
+visible = false
+position = Vector2( -2, 0.999992 )
+scale = Vector2( 0.479321, 0.479321 )
+shape = SubResource( 13 )
+disabled = true
+
+[node name="Size5" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( -10, 1.00012 )
+rotation = 1.5708
+scale = Vector2( 0.481584, 0.481584 )
+texture = ExtResource( 12 )
+
+[node name="Size5Collision" type="CollisionShape2D" parent="Player"]
+visible = false
+position = Vector2( -2, 1 )
+scale = Vector2( 0.481584, 0.481584 )
+shape = SubResource( 14 )
+disabled = true
+
+[node name="Size6" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( -9.84249, -6.10283e-05 )
+rotation = 1.5708
+scale = Vector2( 0.474196, 0.477254 )
+texture = ExtResource( 17 )
+
+[node name="Size6Collision" type="CollisionShape2D" parent="Player"]
+visible = false
+position = Vector2( -1.99384, -7.62939e-06 )
+scale = Vector2( 0.474196, 0.477254 )
+shape = SubResource( 15 )
+disabled = true
+
+[node name="Opponent" parent="." instance=ExtResource( 2 )]
+position = Vector2( 640, 40 )
+script = ExtResource( 4 )
+
+[node name="Ball" parent="." instance=ExtResource( 3 )]
+position = Vector2( 640, 360 )
+
+[node name="Bottom" type="Area2D" parent="."]
+position = Vector2( 1000, 848 )
+rotation = 1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2( -58, 387 )
+shape = SubResource( 2 )
+
+[node name="Top" type="Area2D" parent="."]
+position = Vector2( 1032, 0 )
+rotation = 1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2( -58, 408.5 )
+shape = SubResource( 2 )
+
+[node name="CountdownTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="LeftWall" parent="." instance=ExtResource( 8 )]
+position = Vector2( -40, 11 )
+
+[node name="RightWall" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1700, -133 )
+
+[node name="GrayBox" type="Sprite" parent="."]
+visible = false
+position = Vector2( 640, 359.5 )
+scale = Vector2( 1.61905, 1.32545 )
+texture = ExtResource( 20 )
+
+[node name="WhiteBox" type="Sprite" parent="."]
+visible = false
+position = Vector2( 645.5, 359 )
+scale = Vector2( 1.63534, 1.32727 )
+texture = ExtResource( 24 )
+
+[node name="HighResGlowing" type="Sprite" parent="."]
+visible = false
+position = Vector2( 636, 451 )
+scale = Vector2( 0.762009, 0.759494 )
+texture = ExtResource( 23 )
+
+[node name="HighRes" type="Sprite" parent="."]
+visible = false
+position = Vector2( 636, 450 )
+scale = Vector2( 0.767424, 0.767424 )
+texture = ExtResource( 21 )
+
+[node name="TryAgain" type="Sprite" parent="."]
+visible = false
+position = Vector2( 643, 408 )
+scale = Vector2( 0.767424, 0.767424 )
+texture = ExtResource( 19 )
+
+[node name="YouWin" type="Sprite" parent="."]
+visible = false
+position = Vector2( 639, 172 )
+scale = Vector2( 0.703846, 0.703846 )
+texture = ExtResource( 22 )
+
+[node name="WinAgain" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1138, 714 )
+scale = Vector2( 0.48736, 0.48736 )
+texture = ExtResource( 19 )
+
+[node name="StartScreen" type="Sprite" parent="."]
+visible = false
+position = Vector2( 640, 360 )
+texture = ExtResource( 26 )
+
+[node name="EnterPlay" type="Sprite" parent="."]
+visible = false
+position = Vector2( 644, 683 )
+scale = Vector2( 1.37775, 1.37775 )
+texture = ExtResource( 25 )
+
+[node name="Clank" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 28 )
+volume_db = -17.479
+
+[connection signal="body_entered" from="Bottom" to="." method="_on_Left_body_entered"]
+[connection signal="body_entered" from="Top" to="." method="_on_Right_body_entered"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
